@@ -1,30 +1,109 @@
 import './style.css'
-const template = document.createElement('template')
-template.innerHTML = ` 
-<style>
-h1{
-  color: brown;
-  padding-left:55px;
-  font-family: "Times New Roman", Georgia, Serif;
-}
-h2{
-  color: coral;
-   padding-left:55px;
-    font-family: "Times New Roman", Georgia, Serif;
-}
-h3{
-  color: grey;
-   padding-left:55px;
-   font-family: arial;
-    font-family: "Times New Roman", Georgia, Serif;
-}
-.my-comments{
-  display: flex ;
-background-color: black;
-font-family: arial;
+import {makeElement} from './comment.js'
+/*let nameHeading = document.createElement('h4');
+let emailHeading = document.createElement('h4')
+let commentPara = document.createElement('p');
+const results = document.getElementById('results')
+ 
+function formdata(names, emails, comments){
 
-}
-</style>
+
+results.appendChild(nameHeading)
+results.appendChild(emailHeading);
+results.appendChild(commentPara);
+nameHeading.innerText = `Name: ${names} `;
+emailHeading.innerText = `email: ${emails}`; 
+commentPara.innerText = `comment: ${comments}`; 
+ }
+const btn = document.getElementById('btn');
+
+
+btn.addEventListener("click", (e) =>{
+  e.preventDefault();
+  let name= document.getElementById('name').value;
+let email =document.getElementById('email').value;
+
+let comment = document.getElementById('comment').value;
+formdata(name, email, comment)
+
+})*/
+
+document.getElementById('main-app').innerHTML =`<form id="form">
+      <div>
+        <label for="name">Name</label>
+        <input type="text" id="name"  placeholder="whats your name" required>
+     </div>
+      <div class="email">
+        <label for="email">Email</label>
+        <input type="email" id="email"  required>
+      </div>
+      <div class="comment">
+        <label for="comment">Comment </label>
+        <Textarea id="comment" required></Textarea>
+      </div>
+      <div>
+        <label for="checkbox">Post Comment?</label>
+        <input type="checkbox" id="checkbox" required>
+      </div>
+      <div>
+      <button>Submit</button>
+    <button type="reset">Reset</button>
+    </div>
+      </form>
+
+      <my-comment name="Kadir" email="kadir@gmail.com" comment="hi man" id="user"></my-comment>
+<div id="results"></div>
+      
+        
+ <template id="temple">
+        <style>
+          p {
+      font-weight: bold;
+    }
+
+    span {
+      color: red;
+    }
+        </style>
+          <p>Name: <span id="for-name"></span></p>
+          <p>Eamil: <span id="for-email"></span></p>
+          <p>Comment: <span id="for-comment"></span></p>
+          
+ </template>`;
+
+
+/*document.addEventListener("DOMContentLoaded", () => {
+  const user = document.querySelector("#user");
+  const nameInput = document.querySelector("#name");
+  const emailInput = document.querySelector("#email");
+  const commentInput = document.querySelector("#comment");
+
+  nameInput.addEventListener("input", (e) => {
+    user.setAttribute("name", e.target.value);
+  });
+  emailInput.addEventListener('input', (e) => {
+    user.setAttribute("email", e.target.value);
+  });
+  commentInput.addEventListener('input', (e) => {
+    user.setAttribute("comment", e.target.value);
+  });
+});*/
+
+
+document.querySelector("form").addEventListener("submit",(ev) =>{
+  ev.preventDefault();
+  makeElement();
+})
+   
+    
+  
+
+
+
+/*const template = document.createElement('template')
+template.innerHTML = ` 
+
+
 <div class="my-comments">
 <h1></h1>
 <h2></h2>
@@ -45,7 +124,4 @@ this.shadowRoot.querySelector('h3').innerText = this.getAttribute('comment');
   
   }
 }
-window.customElements.define('my-comments', MyComments)
-  
-
-
+window.customElements.define('my-comments', MyComments)*/
