@@ -12,5 +12,8 @@
     "eslint": "^8.20.0",
     "prettier": "2.7.1",
     "vite": "^3.0.0"
+  },
+  "dependencies": {
+    "idb": "^7.0.2"
   }
 }

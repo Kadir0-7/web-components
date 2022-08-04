@@ -1,3 +1,5 @@
+import { openDB } from 'idb';
+
 // Define a custom element
 class Comment extends HTMLElement {
   // Set up the properties we'll want to use later
@@ -84,3 +86,46 @@ export const makeElement = () => {
   const results = document.querySelector('#results');
   results.append(components);
 };
+export const removeElement = () => {
+  document.removeChild('my-comment');
+};
+
+/*function dataBase() {
+  'use strict';
+
+  //check for support
+  if (!('indexedDB' in window)) {
+    console.log("This browser doesn't support IndexedDB");
+    return;
+  }
+
+  let dbPromise = idb.open('test-db2', 1, function (upgradeDb) {
+    console.log('making a new object store');
+    if (!upgradeDb.objectStoreNames.contains('comments')) {
+      upgradeDb.createObjectStore('comments', { keyPath: 'comments' });
+    }
+  });
+  dbPromise
+    .then(function (db) {
+      let tx = db.transaction('comments', 'readwrite');
+      let store = tx.objectStore('comments');
+      let item = document.querySelector('#results');
+
+      store.add(item);
+      return tx.complete;
+    })
+    .then(function () {
+      console.log('added item to the comments os!');
+    });
+}*/
+
+const db = await openDB('comment-store', 1, {
+  upgrade(db) {
+    db.createObjectStore('comments');
+  },
+});window.addEventListener('DOMContentLoaded', async () => {
+  let item = document.querySelector('#results').value;
+  (async () => {
+    await db.put ('comments', item,'content');
+  });
+})

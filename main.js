@@ -1,5 +1,6 @@
 import './style.css'
 import {makeElement} from './comment.js'
+import { removeElement } from './comment.js';
 /*let nameHeading = document.createElement('h4');
 let emailHeading = document.createElement('h4')
 let commentPara = document.createElement('p');
@@ -46,12 +47,13 @@ document.getElementById('main-app').innerHTML =`<form id="form">
         <input type="checkbox" id="checkbox" required>
       </div>
       <div>
-      <button>Submit</button>
+      <button id="submit">Submit</button>
     <button type="reset">Reset</button>
+    <button id="remove">Remove</button>
     </div>
-      </form>
+      </form> 
 
-      <my-comment name="Kadir" email="kadir@gmail.com" comment="hi man" id="user"></my-comment>
+      
 <div id="results"></div>
       
         
@@ -90,10 +92,14 @@ document.getElementById('main-app').innerHTML =`<form id="form">
 });*/
 
 
-document.querySelector("form").addEventListener("submit",(ev) =>{
+document.querySelector("#submit").addEventListener("click",(ev) =>{
   ev.preventDefault();
   makeElement();
 })
+document.querySelector('remove').addEventListener('click', (e) => {
+  e.preventDefault();
+  removeElement();
+});
    
     
   
