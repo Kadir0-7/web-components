@@ -153,6 +153,6 @@ const db = await openDB('comment-store', 1, {
 window.addEventListener('DOMContentLoaded', async () => {
   let item = document.querySelector('#results').value;
   async () => {
-    await db.put('comments', item, 'content');
+     db.put('comments', item, 'content');
   };
 });
