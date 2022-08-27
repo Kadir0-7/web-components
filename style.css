@@ -22,10 +22,9 @@ body{
 
 .the-form{
  
- 
- border-color:#777cdd ;
- border: solid 1px;
- border-radius: 2px;
+background-color: #ffffff;
+border-radius: 8px;
+  border: 1px solid transparent;
  display: flex;
 }
 #form{
@@ -42,9 +41,7 @@ h4{
   font-weight: lighter;
 
 }
-#results{
-  
-}
+
 button {
   border-radius: 8px;
   border: 1px solid transparent;
