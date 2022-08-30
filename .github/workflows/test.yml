@@ -1,7 +1,8 @@
 name: test.yml
 
 on:
-  pull_request
+   pull_request:
+    branches: [ "master" ]
  
 
 jobs:
