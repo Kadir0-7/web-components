@@ -1,4 +1,4 @@
-import { offlineFallback } from 'workbox-recipes';
+/*import { offlineFallback } from 'workbox-recipes';
 import { setCatchHandler, setDefaultHandler } from 'workbox-routing';
 import { NetworkOnly } from 'workbox-strategies';
 
@@ -46,7 +46,7 @@ const handler = async (options) => {
   return Response.error();
 };
 
-setCatchHandler(handler);
+setCatchHandler(handler);*/
 /*const cacheName = "v1"
 const cacheAssests =['index.html','fallback.html','comment.js', 'style.css']
 
