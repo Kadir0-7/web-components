@@ -11,8 +11,8 @@ export default defineConfig({
          
       },
       strategies: 'injectManifest',
-      filename:'my-sw.js',
-      injectManifest: {
+     injectManifest: {
+      filename: './sw.js',
           globPatterns: ['**/*.html'],
         },
       
