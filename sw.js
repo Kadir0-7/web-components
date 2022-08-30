@@ -8,7 +8,7 @@ offlineFallback();
 const pageFallback = 'fallback.html';
 const imageFallback = false;
 const fontFallback = false;
-
+ 
 setDefaultHandler(new NetworkOnly());
 
 self.addEventListener('install', (event) => {
