@@ -1,14 +1,15 @@
-import { offlineFallback } from 'workbox-recipes';
+/*import { offlineFallback } from 'workbox-recipes';
 import { setCatchHandler, setDefaultHandler } from 'workbox-routing';
 import { NetworkOnly } from 'workbox-strategies';
 
+setDefaultHandler(new NetworkOnly());
 
-const pageFallback = './index.html';
+offlineFallback();
+const pageFallback = 'fallback.html';
 const imageFallback = false;
 const fontFallback = false;
-
+ 
 setDefaultHandler(new NetworkOnly());
-offlineFallback();
 
 self.addEventListener('install', (event) => {
   const files = [pageFallback];
@@ -45,4 +46,40 @@ const handler = async (options) => {
   return Response.error();
 };
 
-setCatchHandler(handler);
+setCatchHandler(handler);*/
+/*const cacheName = "v1"
+const cacheAssests =['index.html','fallback.html','comment.js', 'style.css']
+
+self.addEventListener('install', (e) =>{
+  console.log('SW is installed')
+  e.waitUntil(caches.open(cacheName) 
+  .then(cache => {
+    console.log('caching files');
+    cache.addAll(cacheAssests);
+  })
+ 
+  );
+});
+
+self.addEventListener('activate', (e) =>{
+  console.log('SW is activated')
+  e.waitUntil(
+    caches.keys().then(cacheName =>{
+      return Promise.all(
+        cacheName.map(cache => {
+          if (cache !== cacheName){
+            console.log('removing old chahes')
+return caches.delete(cache)
+          }
+        })
+      )
+    }))
+
+})
+
+self.addEventListener('fetch', (e) =>{
+console.log('SW Fetching');
+e.respondWith(
+  fetch(e.request).catch(() => caches.match(e.request))
+)
+})*/
